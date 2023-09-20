@@ -5,6 +5,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 import 'package:resq/screens/auth/citizens/google_login.dart';
 import 'package:resq/screens/auth/citizens/login_phone.dart';
 import 'package:resq/screens/ui/agency/home_agency.dart';
+import 'package:resq/screens/ui/citizens/home_screen_ctz.dart';
 import 'package:resq/utils/utils.dart';
 import 'package:resq/widgets/rounded_button.dart';
 
@@ -225,7 +226,9 @@ class _LoginScreenState extends State<LoginScreen> {
   InkWell googlelogin(BuildContext context) {
     return InkWell(
       onTap: () {
-        GoogleLogin().login(context);
+        // GoogleLogin().login(context);
+        Navigator.push(
+            context, MaterialPageRoute(builder: ((context) => HomeCitizen())));
       },
       child: Container(
         height: 50,
