@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "378031029451",
+    "firebase_url": "https://resq-a6c15-default-rtdb.firebaseio.com",
+    "project_id": "resq-a6c15",
+    "storage_bucket": "resq-a6c15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378031029451:android:6fb977634c2667c1b0af4e",
+        "android_client_info": {
+          "package_name": "com.example.resq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378031029451-0vk1p57adn9shqp8hlg9ctt6ik3dtnn3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.resq",
+            "certificate_hash": "aad921403e8e5990228e7fed8eb1b140cc93c91d"
+          }
+        },
+        {
+          "client_id": "378031029451-g7febnar50k6bbkkuu93a4cn34mj7lu5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_zaWipGINuutmm9GI9HamyOyZHS8KC14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378031029451-g7febnar50k6bbkkuu93a4cn34mj7lu5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
