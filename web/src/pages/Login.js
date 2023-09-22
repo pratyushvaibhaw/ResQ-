@@ -37,15 +37,15 @@ export default function Login() {
                 </svg>
                 <div className="bg-white text-center shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
                     <p tabIndex={0} role="heading" aria-label="Login to your account" className="text-2xl font-extrabold leading-6 text-gray-800">
-                        Login to your account
+                        Login to your account as User
                     </p>
-                    <p className="text-sm mt-4 font-medium leading-none text-gray-500">
+                    {/* <p className="text-sm mt-4 font-medium leading-none text-gray-500">
                         Dont have account?{" "}
                         <span tabIndex={0} role="link" aria-label="Sign up here" className="text-sm font-medium leading-none underline text-gray-800 cursor-pointer">
                             {" "}
                             Sign up here
                         </span>
-                    </p>
+                    </p> */}
                     <button aria-label="Continue with google" role="button" className="text-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10"onClick={signInWithGoogle}>
                         <svg width={19} height={20} viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.9892 10.1871C18.9892 9.36767 18.9246 8.76973 18.7847 8.14966H9.68848V11.848H15.0277C14.9201 12.767 14.3388 14.1512 13.047 15.0812L13.0289 15.205L15.905 17.4969L16.1042 17.5173C17.9342 15.7789 18.9892 13.221 18.9892 10.1871Z" fill="#4285F4" />

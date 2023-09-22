@@ -7,3 +7,21 @@
     justify-content: center;
     text-align: center;
 }
+.hovername:hover{
+    visibility:visible;
+}
+.effect1{
+    visibility: hidden;
+}
+.effect1:hover{
+    visibility:visible;
+}
+.homealert{
+    margin:0px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:1100px;
+    /* background-color: rgb(25, 135, 84); */
+    border-radius: 10px;
+}

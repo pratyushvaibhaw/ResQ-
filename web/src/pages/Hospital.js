@@ -4,7 +4,7 @@ export default function Hospital() {
     return(
         
             <div className="bg-gray-100 p-6">
-                <h1 className="text-3xl text-center mb-6">Disaster Medical Facilities and Care</h1>
+                <h1 className="text-3xl text-center mb-6 text-black">Disaster Medical Facilities and Care</h1>
 
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full sm:w-1/2 mb-8">
@@ -28,7 +28,7 @@ export default function Hospital() {
                         </ul>
                     </div>
                 </div>
-
+<div className="text-black">
                 <p className="mt-6">
                     In times of disaster, access to medical care and facilities is essential. Here are some additional considerations for disaster medical care:
                 </p>
@@ -50,6 +50,7 @@ export default function Hospital() {
                 </p>
 
                 <p className="mt-6">Remember, having a plan for medical care and facilities can make a significant difference in ensuring the health and safety of you and your loved ones during a disaster.</p>
+                </div>
             </div>
         
     )

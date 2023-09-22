@@ -3,7 +3,7 @@ import React from 'react'
 export default function Floodlogo() {
     return (
         <div className="bg-gray-100 p-6">
-            <h1 className="text-3xl text-center mb-6">Flood Safety Measures</h1>
+            <h1 className="text-3xl text-center mb-6 text-black">Flood Safety Measures</h1>
 
             <div className="flex flex-wrap justify-between">
                 <div className="w-full sm:w-1/2 mb-8">
@@ -36,7 +36,7 @@ export default function Floodlogo() {
                     </ul>
                 </div>
             </div>
-
+<div className="text-black">
             <p className="mt-6">
                 Flooding can be a devastating natural disaster. In addition to the dos and don'ts listed above, here are some more important safety tips to keep in mind:
             </p>
@@ -62,6 +62,7 @@ export default function Floodlogo() {
             </p>
 
             <p className="mt-6">Remember, being prepared and informed is crucial to staying safe during a flood. Always prioritize your safety and the safety of your loved ones.</p>
+            </div>
         </div>
 
     )

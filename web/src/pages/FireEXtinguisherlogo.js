@@ -4,7 +4,7 @@ export default function FireEXtinguisherlogo() {
   return (
     
         <div className="bg-gray-100 p-6">
-          <h1 className="text-3xl text-center mb-6">Disaster Fire Brigade Services and Care</h1>
+          <h1 className="text-3xl text-center mb-6 text-black">Disaster Fire Brigade Services and Care</h1>
     
           <div className="flex flex-wrap justify-between">
             <div className="w-full sm:w-1/2 mb-8">
@@ -27,7 +27,7 @@ export default function FireEXtinguisherlogo() {
               </ul>
             </div>
           </div>
-    
+    <div className="text-black">
           <p className="mt-6">
             In disaster situations, quick access to fire brigade services is essential for controlling and extinguishing fires. Here are some additional considerations for fire brigade care during disasters:
           </p>
@@ -49,6 +49,7 @@ export default function FireEXtinguisherlogo() {
           </p>
     
           <p className="mt-6">Remember, fire brigade services play a crucial role in mitigating the impact of fires during disasters. Use them responsibly and only in genuine fire emergencies.</p>
+          </div>
         </div>
         
   )

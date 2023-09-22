@@ -3,7 +3,7 @@ import React from 'react'
 export default function Amblogo() {
   return (
     <div className="bg-gray-100 p-6">
-      <h1 className="text-3xl text-center mb-6">Disaster Ambulance Services and Care</h1>
+      <h1 className="text-3xl text-center mb-6 text-black">Disaster Ambulance Services and Care</h1>
 
       <div className="flex flex-wrap justify-between">
         <div className="w-full sm:w-1/2 mb-8">
@@ -26,7 +26,7 @@ export default function Amblogo() {
           </ul>
         </div>
       </div>
-
+<div className="text-black">
       <p className="mt-6">
         In disaster situations, quick access to ambulance services can be crucial. Here are some additional considerations for ambulance care during disasters:
       </p>
@@ -48,6 +48,7 @@ export default function Amblogo() {
       </p>
 
       <p className="mt-6">Remember, prompt and efficient use of ambulance services can save lives during disasters. Use them responsibly and only in true emergencies.</p>
+      </div>
     </div>
   )
 }
