@@ -3,8 +3,8 @@ import {Link} from "react-router-dom"
 import Alert from './Alert1'
 export default function Navbar(props) {
   const[alert,setAlert]=useState(null)
-  // const[home,setHome]=useState('Home')
-  // const[edit,setEdit]=useState('Home')
+  //  const[home,setHome]=useState('Home')
+  //  const[edit,setEdit]=useState('Home')
   const showAlert=(message)=>{
     setAlert({
       msg:message
@@ -15,8 +15,8 @@ export default function Navbar(props) {
   }
   const popAlert=()=>{
     showAlert("Alert Sent Successfully!")
-    // setEdit('Home')
-    // setHome('Home')
+    //  setEdit('Home')
+    //  setHome('Home')
 }
 // const toggleHome=()=>{
 //   if(edit==='Home'){
@@ -48,6 +48,7 @@ export default function Navbar(props) {
               </ul>
             </div>
           </div>
+          <hr className="whiteline"/>
           <div className="item"><i className="fa fa-ambulance"></i>
             Available Resources
             <div className="submenu">
@@ -58,9 +59,11 @@ export default function Navbar(props) {
               </ul>
             </div>
           </div>
-          {/* <div className="item submenu"><Link to="/edit" onClick={toggleHome} style={{pointerEvents:edit==='Form'?'none':'auto'}}><i className="fa fa-th-large"></i>Edit Details</Link>
-          </div> */}
-          <div className="item submenu"><Link to="/"><i className="fa fa-sign-out"></i>Logout</Link>
+          <hr />
+          <div className="item"><Link to="/rescue/edit" classname="submenu editbtn" onClick={props.toggleList} style={{pointerEvents:props.list==='List'?'none':'auto'}}><i className="fa fa-th-large"></i>Edit Details</Link>
+          </div>
+          <hr/>
+          <div className="item"><Link to="/" className="submenu logout"><i className="fa fa-sign-out"></i>Logout</Link>
           </div>
         </div>
       </div>

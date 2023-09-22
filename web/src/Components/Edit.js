@@ -38,7 +38,7 @@ export default function Edit() {
         <div className="formelm">
         <input type="text" placeholder='Edit Other Details'/>
         </div>
-        <Link to="/edit" onClick={popAlert} className="submit">Submit</Link>
+        <Link to="/rescue/edit" onClick={popAlert} className="submit">Submit</Link>
         </form>
     </div>
     <Alert alert={alert}/>
