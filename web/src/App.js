@@ -19,6 +19,7 @@ import Floodlogo from "./pages/Floodlogo"
 import FireEXtinguisherlogo from "./pages/FireEXtinguisherlogo";
 import Hospital from "./pages/Hospital"
 import Emergencydropdown from "./pages/Emergencydropdown";
+// import post from "./pages/post"
 function App() {
 
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard/>} />
         <Route path="/download" element={<Download/>} />
         <Route path="/alert" element={<Alert/>} />
+        {/* <Route path='/post' element={<Post/>}/> */}
         <Route exact path="/Amblogo" element={<Amblogo/>} />
         <Route exact path="/FireEXtinguisherlogo" element={<FireEXtinguisherlogo/>} />
         <Route exact path="/Floodlogo" element={<Floodlogo/>} />

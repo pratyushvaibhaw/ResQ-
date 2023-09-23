@@ -1,5 +1,6 @@
 // import { initializeApp } from "firebase/app";
 // import { getAuth, GoogleAuthProvider } from "firebase/auth";
+// import { getFirestore } from "firebase/firestore";
 
 
 // const firebaseConfig = {
@@ -13,6 +14,7 @@
 
 // // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
+// export const db=getFirestore(app);
 // export const auth = getAuth(app);
 // export const provider = new GoogleAuthProvider();
 // export default app;
@@ -23,6 +25,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth ,GoogleAuthProvider} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyDo8luDomdPgV6LtkRe8LhhSxLBeBSSHLc",
   authDomain: "resq-a6c15.firebaseapp.com",
@@ -38,4 +41,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth=getAuth(app);
 export const provider = new GoogleAuthProvider();
+export const db=getFirestore(app);
 export default app;
