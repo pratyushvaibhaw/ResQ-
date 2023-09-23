@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -19,7 +20,6 @@ class HomeAgency extends StatefulWidget {
 class _HomeAgencyState extends State<HomeAgency> {
   String currentAddress = '';
   Position? currentPosition;
-
   TextStyle textStyle1 =
       TextStyle(fontWeight: FontWeight.w300, color: Colors.white);
   Future<Position> checkPosition() async {
@@ -108,7 +108,7 @@ class _HomeAgencyState extends State<HomeAgency> {
                     size: 40,
                   ),
                   Text(
-                    'Tap on services and ask to collab',
+                    'Tap on services and call to collab',
                     style: TextStyle(
                       fontSize: 13,
                     ),

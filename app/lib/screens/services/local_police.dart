@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class LocalPolice extends StatefulWidget {
   const LocalPolice({super.key});
@@ -60,7 +61,41 @@ class _LocalPoliceState extends State<LocalPolice> {
                           var dataSet = snapshot.data!.docs[index];
                           if (auth.currentUser!.email != dataSet['email'])
                             return GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                showDialog(
+                                    context: context,
+                                    builder: ((context) {
+                                      return AlertDialog(
+                                        actionsAlignment:
+                                            MainAxisAlignment.center,
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () async {
+                                                await FlutterPhoneDirectCaller
+                                                    .callNumber(dataSet['phone']
+                                                        .toString());
+                                              },
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.phone,
+                                                    color: Colors.lightBlue,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Text(
+                                                    "Call",
+                                                    style: _textStyle,
+                                                  ),
+                                                ],
+                                              )),
+                                        ],
+                                      );
+                                    }));
+                              },
                               child: Container(
                                 height: 150,
                                 margin: EdgeInsets.all(5),
@@ -84,7 +119,6 @@ class _LocalPoliceState extends State<LocalPolice> {
                                     ),
                                     Text(
                                       'Phone : ' + dataSet['phone'].toString(),
-                                      
                                       style: _textStyle,
                                     ),
                                     Text(

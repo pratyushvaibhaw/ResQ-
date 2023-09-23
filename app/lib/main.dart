@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:resq/screens/ui/agency/home_agency.dart';
+import 'package:resq/screens/ui/citizens/home_screen_ctz.dart';
 import 'package:resq/screens/ui/splash_screen.dart';
 
 void main() async {
@@ -18,7 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.grey),
-      home: SplashScreen(), //first navigation to splashScreen
+      home: SplashScreen(),
+      // //first navigation to splashScreen
+      //home: HomeCitizen(),
+      //home: HomeAgency(),
     );
   }
 }

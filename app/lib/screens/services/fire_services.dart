@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:resq/screens/services/chat_room.dart';
 
 class FireServices extends StatefulWidget {
   FireServices({super.key});
@@ -18,6 +20,16 @@ class _FireServicesState extends State<FireServices> {
   TextStyle _textStyle = TextStyle(fontSize: 12, color: Colors.black);
 
   // Callback function to update sorting flags
+
+  chatRoomId(String user1, String user2) {
+    if (user1[0].toLowerCase().codeUnits[0] >
+        user2.toLowerCase().codeUnits[0]) {
+      return "$user1$user2";
+    } else {
+      return "$user2$user1";
+    }
+  }
+
   void updateSortFlags(bool sortByVehicle, bool sortByManpower) {
     setState(() {
       sortVehicle = sortByVehicle;
@@ -135,52 +147,90 @@ class _FireServicesState extends State<FireServices> {
                         itemBuilder: (context, index) {
                           var dataSet = snapshot.data!.docs[index];
                           if (auth.currentUser!.email != dataSet['email'])
-                            return Container(
-                              height: 150,
-                              margin: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color: Colors.grey.shade300,
-                              ),
-                              padding: EdgeInsets.all(10),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Agency name : ' + dataSet['agency_name'],
-                                    style: _textStyle,
-                                  ),
-                                  Text(
-                                    'Agency id : ' + dataSet['email'],
-                                    style: _textStyle,
-                                  ),
-                                  Text(
-                                    'Phone : ' + dataSet['phone'].toString(),
-                                    style: _textStyle,
-                                  ),
-                                  Text(
-                                    'Operating Area : ' +
-                                        dataSet['operating_area'],
-                                    style: _textStyle,
-                                  ),
-                                  Text(
-                                    "Manpower : " +
-                                        dataSet['manpower'].toString(),
-                                    style: _textStyle.copyWith(
-                                        backgroundColor: (sortManpower)
-                                            ? Colors.lightBlue.shade100
-                                            : null),
-                                  ),
-                                  Text(
-                                      'Vehicles : ' +
-                                          dataSet['vehicles'].toString(),
+                            return GestureDetector(
+                              onTap: () {
+                                //   String roomId = chatRoomId(auth.currentUser!.email.toString(),);
+                                showDialog(
+                                    context: context,
+                                    builder: ((context) {
+                                      return AlertDialog(
+                                        actionsAlignment:
+                                            MainAxisAlignment.center,
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () async {
+                                                await FlutterPhoneDirectCaller
+                                                    .callNumber(dataSet['phone']
+                                                        .toString());
+                                              },
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(
+                                                    Icons.phone,
+                                                    color: Colors.lightBlue,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Text(
+                                                    "Call",
+                                                    style: _textStyle,
+                                                  ),
+                                                ],
+                                              )),
+                                        ],
+                                      );
+                                    }));
+                              },
+                              child: Container(
+                                height: 150,
+                                margin: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  color: Colors.grey.shade300,
+                                ),
+                                padding: EdgeInsets.all(10),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Agency name : ' + dataSet['agency_name'],
+                                      style: _textStyle,
+                                    ),
+                                    Text(
+                                      'Agency id : ' + dataSet['email'],
+                                      style: _textStyle,
+                                    ),
+                                    Text(
+                                      'Phone : ' + dataSet['phone'].toString(),
+                                      style: _textStyle,
+                                    ),
+                                    Text(
+                                      'Operating Area : ' +
+                                          dataSet['operating_area'],
+                                      style: _textStyle,
+                                    ),
+                                    Text(
+                                      "Manpower : " +
+                                          dataSet['manpower'].toString(),
                                       style: _textStyle.copyWith(
-                                          backgroundColor: (sortVehicle)
-                                              ? Colors.lightGreen.shade100
-                                              : null)),
-                                ],
+                                          backgroundColor: (sortManpower)
+                                              ? Colors.lightBlue.shade100
+                                              : null),
+                                    ),
+                                    Text(
+                                        'Vehicles : ' +
+                                            dataSet['vehicles'].toString(),
+                                        style: _textStyle.copyWith(
+                                            backgroundColor: (sortVehicle)
+                                                ? Colors.lightGreen.shade100
+                                                : null)),
+                                  ],
+                                ),
                               ),
                             );
                           else

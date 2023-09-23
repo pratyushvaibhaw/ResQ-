@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:resq/screens/ui/agency/widgets/dashboard/send.dart';
+import 'package:resq/screens/ui/agency/widgets/help_request.dart';
 
 Container upperdashboard(BuildContext context, String currentAddress) {
   return Container(
@@ -56,7 +58,9 @@ Container upperdashboard(BuildContext context, String currentAddress) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                SendAlert(context);
+              },
               child: Container(
                 child: Center(
                     child: Column(
@@ -87,7 +91,9 @@ Container upperdashboard(BuildContext context, String currentAddress) {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                HelpRequest(context, currentAddress);
+              },
               child: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -103,14 +109,10 @@ Container upperdashboard(BuildContext context, String currentAddress) {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(
-                          '0',
-                          style: TextStyle(color: Colors.white),
-                        )
                       ],
                     ),
                     Text(
-                      'Help Requests',
+                      'Urgent Help',
                       style: TextStyle(
                           fontWeight: FontWeight.w400, color: Colors.white),
                     ),

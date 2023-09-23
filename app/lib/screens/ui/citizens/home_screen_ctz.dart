@@ -4,6 +4,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:resq/data/data.dart';
 import 'package:resq/screens/auth/agency/login_screen.dart';
+import 'package:resq/screens/ui/agency/widgets/dashboard/getAlerts.dart';
 import 'package:resq/screens/ui/citizens/widgets/user_drawer.dart';
 
 class HomeCitizen extends StatefulWidget {
@@ -42,15 +43,9 @@ class _HomeCitizenState extends State<HomeCitizen> {
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(
                 onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        color: Colors.amber,
-                        child: Text("anshu"),
-                      );
-                    },
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return GetAlert(context);
+                  }));
                 },
                 icon: Icon(
                   Icons.notifications_active_rounded,

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:resq/screens/auth/agency/login_screen.dart';
+import 'package:resq/screens/ui/agency/widgets/get_request.dart';
 
 Drawer drawer(BuildContext context) {
   var auth = FirebaseAuth.instance;
@@ -11,6 +12,7 @@ Drawer drawer(BuildContext context) {
     backgroundColor: Colors.white,
     child: SingleChildScrollView(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           DrawerHeader(
               padding: EdgeInsets.zero,
@@ -36,6 +38,29 @@ Drawer drawer(BuildContext context) {
                   style: TextStyle(color: Colors.white),
                 ),
               )),
+          SizedBox(
+            height: 20,
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+                elevation: 5,
+                backgroundColor: Colors.white,
+                alignment: Alignment.center,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(width: 1, color: Colors.black),
+                )),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return GetRequest(context);
+              }));
+            },
+            child: Text('Check help requests',
+                style: TextStyle(color: Colors.black)),
+          ),
+          SizedBox(
+            height: 100,
+          ),
           ElevatedButton(
               onPressed: () {
                 auth.signOut();
@@ -46,9 +71,6 @@ Drawer drawer(BuildContext context) {
           SizedBox(
             height: 30,
           ),
-          // TextButton(onPressed: () {
-
-          // }, child: Text('Contact Us')),
         ],
       ),
     ),
