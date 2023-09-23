@@ -10,7 +10,10 @@ export default function Chatbot() {
     height="580"
     src="https://console.dialogflow.com/api-client/demo/embedded/2278c3fe-ce90-4036-8b1c-a9c72c567ebb">
 </iframe> */}
-<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/077a5980-324a-4149-924a-306473f7c961"></iframe></div>
+{/* <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/077a5980-324a-4149-924a-306473f7c961"></iframe></div>
+    </div> */}
+
+    <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/0a5ed6a3-1d2f-41b4-8c65-69c2981a832a"></iframe></div>
     </div>
   )
 }
