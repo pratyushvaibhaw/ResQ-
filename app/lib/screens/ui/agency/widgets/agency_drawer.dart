@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:resq/screens/auth/agency/login_screen.dart';
@@ -41,7 +42,13 @@ Drawer drawer(BuildContext context) {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => LoginScreen()));
               },
-              child: Text('L O G O U T'))
+              child: Text('L O G O U T')),
+          SizedBox(
+            height: 30,
+          ),
+          // TextButton(onPressed: () {
+
+          // }, child: Text('Contact Us')),
         ],
       ),
     ),

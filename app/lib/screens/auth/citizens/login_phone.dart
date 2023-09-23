@@ -119,7 +119,7 @@ class _PhoneLoginState extends State<PhoneLogin> {
                 str: 'G E T    O T P',
                 onTap: () {
                   if (formkey.currentState!.validate()) {
-                    setState(() {
+                    if(mounted)setState(() {
                       loading = true;
                     });
                     auth.verifyPhoneNumber(

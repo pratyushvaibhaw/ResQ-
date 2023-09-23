@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       textInputAction: TextInputAction.next,
                       controller: idController,
                       textAlign: TextAlign.center,
-                      keyboardType: TextInputType.visiblePassword,
+                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: 'enter agency id',
                         hintStyle: TextStyle(fontSize: 15),
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.visiblePassword,
                       decoration: InputDecoration(
-                        hintText: 'enter u-code',
+                        hintText: 'enter password',
                         hintStyle: TextStyle(fontSize: 15),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -169,7 +169,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 str: 'L O G I N',
                 onTap: () {
                   if (formkey.currentState!.validate()) {
-                    login(idController.text, passwordController.text);
+                    login(idController.text.toString(),
+                        passwordController.text.toString());
                   }
                 },
                 loading: loading,
@@ -226,9 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
   InkWell googlelogin(BuildContext context) {
     return InkWell(
       onTap: () {
-        // GoogleLogin().login(context);
-        Navigator.push(
-            context, MaterialPageRoute(builder: ((context) => HomeCitizen())));
+        GoogleLogin().login(context);
       },
       child: Container(
         height: 50,

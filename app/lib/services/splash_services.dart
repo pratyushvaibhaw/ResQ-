@@ -5,7 +5,6 @@ import 'dart:async';
 
 import 'package:resq/screens/ui/agency/home_agency.dart';
 import 'package:resq/screens/ui/citizens/home_screen_ctz.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashServices {
   void isLogin(BuildContext context) async {

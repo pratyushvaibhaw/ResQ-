@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:resq/data_input.dart';
 import 'package:resq/main.dart';
 import 'package:resq/screens/ui/agency/widgets/agency_drawer.dart';
 import 'package:resq/screens/ui/agency/widgets/agency_appbar.dart';
@@ -9,7 +10,7 @@ import 'package:resq/screens/ui/agency/widgets/dashboard/upper_dashboard.dart';
 import 'package:resq/utils/utils.dart';
 
 class HomeAgency extends StatefulWidget {
-  const HomeAgency({super.key});
+  HomeAgency({super.key});
 
   @override
   State<HomeAgency> createState() => _HomeAgencyState();
@@ -78,6 +79,11 @@ class _HomeAgencyState extends State<HomeAgency> {
   Widget build(BuildContext context) {
     double totalheight = MediaQuery.of(context).size.height;
     return Scaffold(
+      // floatingActionButton: FloatingActionButton(onPressed: () {
+      //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+      //     return DataInput();
+      //   }));
+      // }),
       backgroundColor: Colors.white,
       appBar: appBar(totalheight * .12, currentAddress),
       drawer: Container(
@@ -86,42 +92,43 @@ class _HomeAgencyState extends State<HomeAgency> {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            upperdashboard(context, currentAddress),
-            SizedBox(
-              height: 5,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.touch_app_rounded,
-                  size: 40,
-                ),
-                Text(
-                  'Tap on services and ask to collab',
-                  style: TextStyle(
-                    fontSize: 13,
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              upperdashboard(context, currentAddress),
+              SizedBox(
+                height: 5,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.touch_app_rounded,
+                    size: 40,
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
+                  Text(
+                    'Tap on services and ask to collab',
+                    style: TextStyle(
+                      fontSize: 13,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Expanded(
                 child: ScrollConfiguration(
                   // used to remove the overscroll glow
                   child: lowerdashboard(),
                   behavior: ScrollBehavior().copyWith(overscroll: false),
                 ),
-                height: 350),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
-  
 }
