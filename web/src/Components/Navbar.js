@@ -60,29 +60,29 @@ const Navbar = (props) => {
       <nav className="flex items-center ">
         <ul className="flex gap-5 ">
           <li className="flex flex-col">
-            <Link to="/"><h1>Home</h1></Link>
+            <Link to="/"><h1 className=" hover:text-blue-300">Home</h1></Link>
           </li>
           <li>
-            <Link to="/chatbot"> <h1>Chatbot</h1></Link>
+            <Link to="/chatbot"> <h1 className=" hover:text-blue-300">Chatbot</h1></Link>
           </li>
           <li >
-          <Link to="/Emergencydropdown"> <h1>Emergency-Contacts</h1></Link>
+          <Link to="/Emergencydropdown"> <h1 className=" hover:text-blue-300">Emergency-Contacts</h1></Link>
           </li>
 
         </ul>
       </nav>
       <div className="flex justify-between items-center">
 
-        <div className="flex justify-center items-center gap-3 mr-3 ">
+        <div className="flex justify-center items-center gap-3 mr-3">
           {
-            !user && <Link to="/login"><button className="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">Login</button></Link>}
+            !user && <Link to="/login"><button className="bg-white text-black font-bold py-2 px-4 rounded">Login</button></Link>}
            {
             <div className="user flex ">
               {user && (
                 <>
                    {/* <p> {user?.displayName} </p>
                 <img src={user?.photoURL || ""} width="20" height="20" className="absolute object-left" />  */}
-                  <button className="bg-white hover:bg-black-200 text-black font-bold py-2 px-4 rounded" onClick={() => {signUserOut();popAlert();}}> Log Out</button>
+                  <button className="navbut bg-white text-black font-bold py-2 px-4 hover:blue-300 rounded" onClick={() => {signUserOut();popAlert();}}> Log Out</button>
                 </>
               )}
             </div>
@@ -105,7 +105,7 @@ const Navbar = (props) => {
             // 
           }
           <Link to="/download"><button className="flex bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded"><FiDownload className="justify-center items-center mt-1 gap-1" />Download</button></Link>
-          <Link to="/alert"><button disabled={!user} className=" flex bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded"><HiBellAlert className="justify-center items-center mt-1 gap-1" />Alerts</button></Link>
+          <Link to="/alert"><button disabled={!user} className=" flex hover:bg-blue-700 bg-white text-black font-bold py-2 px-4 rounded"><HiBellAlert className="justify-center items-center mt-1 gap-1" />Alerts</button></Link>
         </div>
       </div>
     </div>

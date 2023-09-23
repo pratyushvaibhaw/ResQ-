@@ -99,8 +99,8 @@ export default function Signup() {
                                     </div> */}
                                 </div>
                                 {/* <button onClick={() => navigate("/rescue/rescue")} type="submit" class="w-full text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"  >Create an account</button> */}
-                                <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                                    <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500" onClick={signIn}>Login here</a>
+                                <p class="justify-center items-center text-center text-sm font-light text-gray-500 dark:text-gray-400">
+                                    <a href="#" class="  bg-transparent text-blue-700 hover:bg-blue-500 font-semibold hover:text-black py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={signIn}>Login here</a>
                                 </p>
                             </form>
                         </div>

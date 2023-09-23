@@ -65,15 +65,15 @@ const CreateFormData = {
       <div>
       <Alert alert={alert} />
         <form className="alertsend" onSubmit={handleSubmit(onCreatePost)} >
-          <div>
+          <div className='flex justify-center items-center'>
             <textarea type="text" className="box" placeholder="Enter the alert message" {...register("description")}/>
             <p style={{ color: "red" }}>{errors.description?.message}</p>
           </div>
-          <div className="sbtn">
+          <div className="p-2 bg-white text-black rounded-md items-center mt-2 ml-28 cursor-default">
             {/* <Link to="/rescue/alert" onClick={popAlert} type='submit'>
               Send
             </Link> */}
-             <input type="submit" className="text-white" onClick={popAlert}  />
+             <button className='w-60 '><input type="submit" className=" " onClick={popAlert}  /></button>
           </div>
         </form>  
 

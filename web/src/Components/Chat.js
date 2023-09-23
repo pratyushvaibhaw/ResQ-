@@ -10,7 +10,7 @@ export default function Chat() {
             <form action="" >
                 <div className="forminput">
                 <input type="text" placeholder="Enter the message"/>
-                <Link to="/rescue/chat">Send</Link>
+                <Link to="/rescue/chat" className='bg-white text-black'>Send</Link>
                 </div>
             </form>
           </div>
