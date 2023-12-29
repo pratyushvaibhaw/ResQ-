@@ -1,16 +1,19 @@
-# resq
+## What is  ResQ+ ?
 
-A new Flutter project.
+An android appliction built using Flutter Framework and Dart. The app is intended to eastablish a well organised communication and collaboration between various
+disaster rescue agencies during the outbreak of natural or man made disasters. For secured authenticaion and data storage Google Firebase services has been used .
+Extended web version also available and can be checked in the web directory.
 
-## Getting Started
+# ResQ+
+  - Secured login using FirebaseAuth.
+  - Send alerts to citizens / other rescue agencies or asking for help by triggering help requests (Realtime messaging).
+  - Sharing live location with each other using geo locator.
+  - Important filters like sorting on the basis of vehicles, manpower for smoother conduct.
 
-This project is a starting point for a Flutter application.
+## App Screens  
+  ![ResQ+](https://github.com/pratyushvaibhaw/ResQ-/assets/124231688/65405ab2-1ac4-48c0-8716-c771d87ada0f)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
